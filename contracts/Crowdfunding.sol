@@ -154,7 +154,7 @@ contract Crowdfunding {
         if (prevContributionBalance == 0) {
             contributorsCount++;
         }
-       // address payable addr = address(uint160(address(this)));
+       // Check again to see whether the last contribution met the fundingGoal
         emit LogContributionReceived(address(this), _contributor, msg.value);
         if (totalFunding >= properties.goal) {
             emit LogFundingGoalReached(address(this), totalFunding, contributionsCount);
